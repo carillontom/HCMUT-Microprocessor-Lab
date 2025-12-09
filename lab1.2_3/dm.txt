@@ -1,0 +1,76 @@
+;
+; lab1.2_3.asm
+;
+; Created: 9/24/2025 2:35:46 PM
+; Author : huysk
+;
+
+
+.org 0x00
+rjmp main
+.org 0x50
+
+main:
+	ldi r16, 0xff
+	out ddra, r16
+loop:
+	ldi r16, 0x08
+	ldi r17, 0xff
+	ldi r18, 0x00
+shiftoutne:
+	rol r17
+	brcc carry_0
+	sbi PORTA, 0
+	rcall DELAY_500ms
+	rjmp setbitne
+carry_0:
+	cbi PORTA,0
+	rcall DELAY_500ms
+setbitne:
+	sbi PORTA, 1
+	cbi PORTA, 1
+	sbi PORTA, 2
+	cbi PORTA, 2
+	dec r16
+	brne shiftoutne
+	 ; sau khi ?ã sáng ??
+    rol r17            ; ph?c h?i r17 n?u c?n
+    ldi r18, 0x00      ; d? li?u toàn 0
+    ldi r16, 0x08
+fadeout:
+    rol r18           ; quay nh?ng toàn 0 thì Carry luôn =0
+    cbi PORTA,0        ; DS =0
+    rcall DELAY_500ms
+    sbi PORTA,1
+    cbi PORTA,1
+    sbi PORTA,2
+    cbi PORTA,2
+    dec r16
+    brne fadeout
+	rjmp loop
+
+DELAY_500ms: ;4000000 MCs
+
+LDI R27, 66 ; 1
+
+L1: LDI R28, 200 ; 1
+
+L2: LDI R29, 100 ; 1
+
+L3: 
+DEC R29 ; 1
+BRNE L3 ; 2 (1 last)
+		; Total L3 : L3 = 3 x 99 + 2 = 299
+
+DEC R28 ; 1
+BRNE L2 ; 2 (1 last)
+		; 1+299+1+2 = 303
+		; Total L2 : 303 x 199 + 302 = 60599
+
+DEC R27 ; 1
+BRNE L1 ; 2 (1 last)
+		; 1 + 60599 + 1 + 2  = 60603
+		; Total L1 : 60603 x 65 + 60602 = 3999797
+		; Toal DELAY : 3999797 + 1 = 3999798 MCs ~ 500ms
+RET
+
