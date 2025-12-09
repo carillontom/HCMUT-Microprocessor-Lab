@@ -1,0 +1,33 @@
+;
+; lab1.1_2.asm
+;
+; Created: 9/18/2025 2:55:50 PM
+; Author : huysk
+;
+
+
+; Replace with your application code
+.org 0x00
+
+main:
+LDI R16, 0xFF
+OUT DDRB, R16
+LDI R16, 0x00
+OUT DDRA, R16
+
+LDI R16, 0x00
+OUT PORTB, R16
+LDI R16, 0xFF
+OUT PORTA, R16
+
+read:
+
+IN R18, PINA
+LDI R19, 0xFF
+EOR R18, R19
+LDI R17, 5
+ADD R18, R17
+OUT PORTB, R18
+
+
+RJMP read
