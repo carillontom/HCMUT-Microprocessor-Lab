@@ -1,0 +1,32 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega324PA"</DEVICE>
+ <WORKING_DIR>C:\Users\Admin\OneDrive\Vinh\251\VXL\VXL_Lab2_Vinh\lab2.1_1b\lab2.1_1b\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>D:/Programs\AS\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>D:\Programs\AS\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Admin\OneDrive\Vinh\251\VXL\VXL_Lab2_Vinh\lab2.1_1b\lab2.1_1b\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>D:/Programs\AS\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m324PAdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Admin\OneDrive\Vinh\251\VXL\VXL_Lab2_Vinh\lab2.1_1b\lab2.1_1b\Debug\lab2.1_1b.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>lab2.1_1b.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>lab2.1_1b.map</FILE>
+  <FILE>lab2.1_1b.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <configure><FILE>C:\Users\Admin\OneDrive\Vinh\251\VXL\VXL_Lab2_Vinh\lab2.1_1b\lab2.1_1b\main.asm</FILE><LINE>6</LINE></configure>
+  <main><FILE>C:\Users\Admin\OneDrive\Vinh\251\VXL\VXL_Lab2_Vinh\lab2.1_1b\lab2.1_1b\main.asm</FILE><LINE>12</LINE></main>
+  <DELAY><FILE>C:\Users\Admin\OneDrive\Vinh\251\VXL\VXL_Lab2_Vinh\lab2.1_1b\lab2.1_1b\main.asm</FILE><LINE>31</LINE></DELAY>
+  <L1><FILE>C:\Users\Admin\OneDrive\Vinh\251\VXL\VXL_Lab2_Vinh\lab2.1_1b\lab2.1_1b\main.asm</FILE><LINE>35</LINE></L1>
+  <L2><FILE>C:\Users\Admin\OneDrive\Vinh\251\VXL\VXL_Lab2_Vinh\lab2.1_1b\lab2.1_1b\main.asm</FILE><LINE>37</LINE></L2>
+  <L3><FILE>C:\Users\Admin\OneDrive\Vinh\251\VXL\VXL_Lab2_Vinh\lab2.1_1b\lab2.1_1b\main.asm</FILE><LINE>39</LINE></L3>
+ </LABELS>
+</ASSEMBLER_INFO>

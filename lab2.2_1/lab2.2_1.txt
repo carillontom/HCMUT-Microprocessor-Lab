@@ -1,0 +1,140 @@
+;PB0 = RS
+;PB1 = RW
+;PB2 = E
+;PB4-PB7 = D4-D7
+.ORG 0X00
+RJMP configuration
+.ORG 0X50 
+
+configuration:
+	LDI R16, 0XFF
+	OUT DDRB, R16; PB as output
+	CLR R16
+
+lcd_start:
+	RCALL delay2ms; wait for lcd powering up 
+	LDI R17, 0X03
+	RCALL cmd_write
+	RCALL delay2ms
+	RCALL cmd_write
+	RCALL delay2ms
+	RCALL cmd_write
+	RCALL delay2ms
+	LDI R17, 0X02; 4-bit mode 
+	RCALL cmd_write
+	RCALL delay2ms
+	LDI R17, 0x28; Configures LCD interface: 4-bit data length, 2 display lines, and 5×8 font.
+	RCALL cmd_write
+	RCALL delay2ms
+	LDI R17, 0X01; delete everything on screen
+	RCALL cmd_write
+	RCALL delay2ms
+	LDI R17, 0X0C;  bring pointer to first position in first row
+	RCALL cmd_write
+	RCALL delay2ms
+	LDI R17, 0X06; inc pointer
+	RCALL cmd_write
+	RCALL delay2ms
+
+lcd_write:
+	LDI R17, 0X80; bring pointer to first position of row 1
+	RCALL cmd_write
+	RCALL delay2ms
+
+	LDI ZH, high(L1 << 1); set pointer to the first position address of the first string
+	LDI ZL, low(L1 << 1)
+L1_write:	
+	LPM R17, Z+; LPM value at Z to R17 and +Z
+	CPI R17, 0; check if null terminator met
+	BREQ exit_L1
+	RCALL data_write
+	RJMP L1_write
+exit_L1:
+	NOP
+	LDI R17, 0xC0;set pointer of lcd to the second roww
+	RCALL cmd_write
+
+	LDI ZH, high(L2 << 1); set pointer to the first position address of the second string
+	LDI ZL, low(L2 << 1)
+L2_write: 
+	LPM R17, Z+; LPM value at Z to R17 and +Z
+	CPI R17, 0; check if null terminator met
+	BREQ exit_L2
+	RCALL data_write
+	RJMP L2_write
+exit_L2:
+	rjmp lcd_write; done program
+
+cmd_write:
+	MOV R16, R17; MOVE THE COMMAND BYTE FROM R17 TO R16
+	ANDI R16, 0XF0; TAKE HIGH NIBBLE
+	OUT PORTB, R16; OUT HIGH NIBBLE TO PB4 - PB7
+	CBI PORTB, 0; RS = 0 (COMMAND)
+	CBI PORTB, 1; RW = 0 (WRITE)
+	SBI PORTB, 2; EN = 1
+	NOP
+	NOP; WAIT
+	CBI PORTB, 2; EN = 0 
+
+	RCALL delay2ms; wait
+
+	MOV R16, R17; MOVE THE COMMAND BYTE FROM R17 TO R16 AGAIN
+	SWAP R16; BRING UP LOW NIBBLE
+	ANDI R16, 0XF0; TAKE HIGH NIBBLE ONLY
+	OUT PORTB, R16; OUTPUT HIGH NIBBLE TO PB4 - PB7
+	CBI PORTB, 0; RS = 0 (COMMAND)
+	CBI PORTB, 1; RW = 0 (WRITE)
+	SBI PORTB, 2; EN = 1
+	NOP
+	NOP; WAIT
+	CBI PORTB, 2; EN = 0 
+	RET
+
+data_write:
+	MOV R16, R17; MOVE THE COMMAND BYTE FROM R17 TO R16
+	ANDI R16, 0XF0; TAKE HIGH NIBBLE
+	OUT PORTB, R16; OUT HIGH NIBBLE TO PB4 - PB7
+	SBI PORTB, 0; RS = 1 (DATA)
+	CBI PORTB, 1; RW = 0 (WRITE)
+	SBI PORTB, 2; EN = 1
+	NOP
+	NOP; WAIT
+	CBI PORTB, 2; EN = 0 
+
+	RCALL delay2ms; wait
+
+	MOV R16, R17; MOVE THE COMMAND BYTE FROM R17 TO R16 AGAIN
+	SWAP R16; BRING UP LOW NIBBLE
+	ANDI R16, 0XF0; TAKE HIGH NIBBLE ONLY
+	OUT PORTB, R16; OUTPUT HIGH NIBBLE TO PB4 - PB7
+	SBI PORTB, 0; RS = 1 (DATA)
+	CBI PORTB, 1; RW = 0 (WRITE)
+	SBI PORTB, 2; EN = 1
+	NOP
+	NOP; WAIT
+	CBI PORTB, 2; EN = 0 
+	RET
+
+delay2ms:
+    LDI R20, 1
+LP0: LDI R22, 12
+LP1: LDI R18, 40
+LP2: LDI R19, 10
+LP3:
+    DEC R19
+    BRNE LP3
+
+    DEC R18
+    BRNE LP2
+
+    DEC R22
+    BRNE LP1
+
+    DEC R20
+    BRNE LP0
+    RET
+
+;Text data for LCD
+.org 0x200
+L1: .db "MCU-AVR LAB", 0 
+L2: .db "Group: 05", 0

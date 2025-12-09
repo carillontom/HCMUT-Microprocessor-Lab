@@ -1,0 +1,187 @@
+;PB0 = RS
+;PB1 = RW
+;PB2 = E
+;PB4–PB7 = D4–D7
+;PA0 = BUTTON INPUT
+;PORTD = BAR LED
+
+.ORG 0x00
+RJMP configuration
+.ORG 0x50
+
+configuration:
+    CLR R21                 ; idx
+    CLR R22                 ; hundred
+    CLR R23                 ; ten
+    CLR R24                 ; unit
+
+    LDI R16, 0xFF
+    OUT DDRB, R16           ; portb as output (lcd)
+    OUT DDRD, R16           ; portd as output (bar led)
+
+    CBI DDRA, 0             ; pa0 as input
+    SBI PORTA, 0            ; enable pull-up resistor at pa0
+
+    RCALL lcd_start
+    RCALL delay2ms
+    LDI R20, 48             ; ascii offset for '0'
+
+loop_check:
+    SBIC PINA, 0            ; check if button is pressed, if not, skip next instruction
+    RJMP loop_check         ; wait until pressed
+
+loop_pressed:
+    SBIS PINA, 0            ; check if button released, if not, stay here
+    RJMP loop_pressed
+
+    INC R21                 ; count+
+    CPI R21, 255            ; compare check
+    BREQ max_count
+
+    RCALL barled_display
+    RCALL split_digits
+    RCALL display_number
+    RJMP loop_check
+
+max_count:
+    NOP
+    RJMP max_count
+
+barled_display:
+    OUT PORTD, R21
+    RET
+
+lcd_start:
+    RCALL delay2ms          ; wait for lcd power-up
+    LDI R17, 0x03
+    RCALL cmd_write
+    RCALL delay2ms
+    RCALL cmd_write
+    RCALL delay2ms
+    RCALL cmd_write
+    RCALL delay2ms
+    LDI R17, 0x02           ; 4-bit mode
+    RCALL cmd_write
+    RCALL delay2ms
+    LDI R17, 0x28           ; function set: 4-bit, 2 lines, 5x8 font
+    RCALL cmd_write
+    RCALL delay2ms
+    LDI R17, 0x01           ; clear display
+    RCALL cmd_write
+    RCALL delay2ms
+    LDI R17, 0x0C           ; display on, cursor off
+    RCALL cmd_write
+    RCALL delay2ms
+    LDI R17, 0x06           ; entry mode, cursor increments
+    RCALL cmd_write
+    RCALL delay2ms
+    RET
+
+display_number:
+    LDI R17, 0x80
+    RCALL cmd_write
+    LDI R17, 0x01
+    RCALL cmd_write
+    CPI R21, 100
+    BRLO check_ten
+    MOV R25, R22            ; hundred digit
+    ADD R25, R20
+    MOV R17, R25
+    RCALL data_write
+check_ten:
+    CPI R21, 10
+    BRLO check_unit
+    MOV R25, R23            ; ten digit
+    ADD R25, R20
+    MOV R17, R25
+    RCALL data_write
+check_unit:
+    MOV R25, R24            ; unit digit
+    ADD R25, R20
+    MOV R17, R25
+    RCALL data_write
+    RET
+
+split_digits:
+    CLR R23                 ; ten = 0
+    CLR R24                 ; unit = 0
+    MOV R25, R21
+    CPI R25, 200
+    BRLO check_hundred
+    SUBI R25, 200
+    LDI R22, 2
+    RJMP count_ten
+check_hundred:
+    CPI R25, 100
+    BRLO count_ten
+    SUBI R25, 100
+    LDI R22, 1
+count_ten:
+    CPI R25, 10
+    BRLO done_count
+    SUBI R25, 10
+    INC R23
+    RJMP count_ten
+done_count:
+    MOV R24, R25
+    RET
+
+cmd_write:
+    MOV R16, R17            ; move the command byte from r17 to r16
+    ANDI R16, 0xF0          ; keep high nibble
+    OUT PORTB, R16          ; send high nibble to pb4 - pb7
+    CBI PORTB, 0            ; rs = 0 (command)
+    CBI PORTB, 1            ; rw = 0 (write)
+    SBI PORTB, 2            ; en = 1
+    NOP
+    NOP                     ; short delay
+    CBI PORTB, 2            ; en = 0
+    RCALL delay2ms          ; wait
+    MOV R16, R17            ; reload r17
+    SWAP R16                ; swap to get low nibble
+    ANDI R16, 0xF0          ; keep high nibble (low nibble shifted)
+    OUT PORTB, R16
+    CBI PORTB, 0            ; rs = 0 (command)
+    CBI PORTB, 1            ; rw = 0 (write)
+    SBI PORTB, 2            ; en = 1
+    NOP
+    NOP
+    CBI PORTB, 2            ; en = 0
+    RCALL delay2ms
+    RET
+
+data_write:
+    MOV R16, R17            ; move the data byte from r17 to r16
+    ANDI R16, 0xF0          ; keep high nibble
+    OUT PORTB, R16
+    SBI PORTB, 0            ; rs = 1 (data)
+    CBI PORTB, 1            ; rw = 0 (write)
+    SBI PORTB, 2            ; en = 1
+    NOP
+    NOP
+    CBI PORTB, 2            ; en = 0
+    RCALL delay2ms
+    MOV R16, R17
+    SWAP R16
+    ANDI R16, 0xF0
+    OUT PORTB, R16
+    SBI PORTB, 0
+    CBI PORTB, 1
+    SBI PORTB, 2
+    NOP
+    NOP
+    CBI PORTB, 2
+    RCALL delay2ms
+    RET
+
+delay2ms:
+    LDI R18, 20
+dl1:
+        LDI R19, 200
+dl2:
+            NOP
+            DEC R19
+            BRNE dl2
+        DEC R18
+        BRNE dl1
+    RET
