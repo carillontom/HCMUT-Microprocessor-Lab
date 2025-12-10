@@ -1,6 +1,6 @@
-## Microprocessor Systems – Lab Overview (Lab 1 → Lab 5)
+## Microprocessor Systems – Lab 
 
-This repository contains all laboratory work for the **Microprocessor Systems** course at **Ho Chi Minh City University of Technology (HCMUT)**, implemented on the **ATmega324P** using low-level **AVR Assembly**.
+This repository contains all laboratory work (Lab 1 → Lab 5 distributed into 5 other branches) for the **Microprocessor Systems** course at **Ho Chi Minh City University of Technology (HCMUT)**, implemented on the **ATmega324P** using low-level **AVR Assembly**.
 Across 5 labs, we progressed from basic I/O control to timers, display interfaces, serial communication, ADC measurements, and interrupt-driven systems.
 
 ---
