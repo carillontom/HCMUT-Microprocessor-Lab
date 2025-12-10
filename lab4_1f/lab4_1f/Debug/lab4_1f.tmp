@@ -1,0 +1,31 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega324PA"</DEVICE>
+ <WORKING_DIR>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab4_Vinh\lab4_1f\lab4_1f\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>D:/Program\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>D:\Program\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab4_Vinh\lab4_1f\lab4_1f\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>D:/Program\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m324PAdef.inc</FILE>
+  <FILE>D:/Program\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m324padef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab4_Vinh\lab4_1f\lab4_1f\Debug\lab4_1f.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>lab4_1f.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>lab4_1f.map</FILE>
+  <FILE>lab4_1f.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <USART_Init><FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab4_Vinh\lab4_1f\lab4_1f\main.asm</FILE><LINE>29</LINE></USART_Init>
+  <start><FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab4_Vinh\lab4_1f\lab4_1f\main.asm</FILE><LINE>17</LINE></start>
+  <USART_ReceiveChar><FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab4_Vinh\lab4_1f\lab4_1f\main.asm</FILE><LINE>45</LINE></USART_ReceiveChar>
+  <USART_ReceiveChar_Wait><FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab4_Vinh\lab4_1f\lab4_1f\main.asm</FILE><LINE>48</LINE></USART_ReceiveChar_Wait>
+ </LABELS>
+</ASSEMBLER_INFO>

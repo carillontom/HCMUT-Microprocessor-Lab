@@ -1,0 +1,54 @@
+;
+; lab4_1f.asm
+;
+; Created: 10/31/2025 7:38:47 AM
+; Author : huysk
+;
+
+.include "m324padef.inc"  
+
+LDI R16, 0XFF
+OUT DDRB, R16
+LDI R16, 0X00
+OUT PORTB, R16
+CLR R16
+call USART_Init
+ 
+start: 
+call USART_ReceiveChar
+subi r16, 0x30
+cpi r16, 10 
+brsh start
+cpi r16, 0
+brlo start
+out PORTB, R16
+rjmp start 
+
+;init UART 0 
+;CPU clock is 8Mhz 
+USART_Init: 
+; Set baud rate to 9600 bps with 1 MHz clock 
+	ldi r16, 103
+	sts UBRR0L, r16 
+;set double speed
+    ldi r16, (1 << U2X0) 
+    sts UCSR0A, r16 
+    ; Set frame format: 8 data bits, no parity, 1 stop bit 
+    ldi r16, (1 << UCSZ01) | (1 << UCSZ00) 
+    sts UCSR0C, r16 
+    ; Enable transmitter and receiver 
+    ldi r16, (1 << RXEN0) | (1 << TXEN0) 
+    sts UCSR0B, r16 
+    ret 
+
+;receive 1 byte in r16 
+USART_ReceiveChar: 
+ push r17 
+    ; Wait for the transmitter to be ready 
+    USART_ReceiveChar_Wait: 
+  lds r17, UCSR0A 
+        sbrs r17, RXC0 ;check USART Receive Complete bit 
+        rjmp USART_ReceiveChar_Wait 
+        lds r16, UDR0  ;get data 
+  pop r17 
+    ret 

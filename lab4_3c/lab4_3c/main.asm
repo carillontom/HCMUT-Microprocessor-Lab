@@ -1,0 +1,105 @@
+;
+; lab4_3c.asm
+;
+; Created: 11/1/2025 12:30:21 PM
+; Author : huysk
+;
+
+.include "m324padef.inc"  
+call USART_Init
+configure:
+ldi r16, 0x00
+out ddra, r16
+ldi r16, 0xff
+out porta, r16
+clr r16
+clr r21
+start: 
+call count
+call NUM_TRANSFER
+call print_digit
+rjmp start 
+
+count:
+	check_press:
+	sbic pina, 0		;pressed
+	rjmp check_press
+	check_release:
+	sbis pina, 0		;released
+	rjmp check_release
+	cpi r21, 255
+	breq enough_is_enough
+	inc r21
+	enough_is_enough:
+	mov r16, r21
+	ret
+
+NUM_TRANSFER:
+	clr r17
+	clr r18
+	check_hundreds:
+	cpi r16, 100
+	brlo check_tens
+	subi r16, 100
+	inc r17
+	rjmp check_hundreds
+	check_tens:
+	cpi r16, 10
+	brlo done
+	subi r16, 10
+	inc r18			;r18 holds tens
+	rjmp check_tens
+	done:
+	ret
+
+print_digit:
+	push r16
+	push r17
+	pop r16
+	pop r17		;swap r16 with r17
+	ldi r20, 48
+	
+	add r16, r20			
+	rcall USART_SendChar
+	mov r16, r18
+	add r16, r20
+	rcall USART_SendChar
+	mov r16, r17
+	add r16, r20
+	rcall USART_SendChar
+	ldi r16, 10
+	rcall USART_SendChar
+	ldi r16, 13
+	rcall USART_SendChar
+	ret
+
+
+
+;init UART 0 
+;CPU clock is 8Mhz 
+USART_Init: 
+; Set baud rate to 9600 bps with 1 MHz clock 
+	ldi r16, 103
+	sts UBRR0L, r16 
+;set double speed
+    ldi r16, (1 << U2X0) 
+    sts UCSR0A, r16 
+    ; Set frame format: 8 data bits, no parity, 1 stop bit 
+    ldi r16, (1 << UCSZ01) | (1 << UCSZ00) 
+    sts UCSR0C, r16 
+    ; Enable transmitter and receiver 
+    ldi r16, (1 << RXEN0) | (1 << TXEN0) 
+    sts UCSR0B, r16 
+    ret 
+
+;send out 1 byte in r16 
+USART_SendChar: 
+ push r17 
+    ; Wait for the transmitter to be ready 
+    USART_SendChar_Wait: 
+  lds r17, UCSR0A 
+        sbrs r17, UDRE0 ;check USART Data Register Empty bit 
+        rjmp USART_SendChar_Wait 
+       sts UDR0, r16  ;send out 
+ pop r17 
+    ret 
