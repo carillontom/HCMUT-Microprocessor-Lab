@@ -5,7 +5,7 @@ Across 5 labs, we progressed from basic I/O control to timers, display interface
 
 ---
 
-## 🔹 Lab 1 – I/O, Arithmetic & Software Delays
+##  Lab 1 – I/O, Arithmetic & Software Delays
 
 **Focus:** Basic digital I/O, computational instructions, and delay loops.
 
@@ -23,7 +23,7 @@ Across 5 labs, we progressed from basic I/O control to timers, display interface
 
 ---
 
-## 🔹 Lab 2 – 7-Segment LEDs, LCD & Button Debounce
+##  Lab 2 – 7-Segment LEDs, LCD & Button Debounce
 
 **Focus:** Human–machine interfaces using 7-segment displays, LCD 16×2, and push buttons.
 
@@ -46,7 +46,7 @@ Across 5 labs, we progressed from basic I/O control to timers, display interface
 
 ---
 
-## 🔹 Lab 3 – Timers for Delays, Pulses & 7-Segment Scanning
+##  Lab 3 – Timers for Delays, Pulses & 7-Segment Scanning
 
 **Focus:** Hardware timers (Timer0, Timer1) for precise delays, pulse generation, and event counting.
 
@@ -65,7 +65,7 @@ Across 5 labs, we progressed from basic I/O control to timers, display interface
 
 ---
 
-## 🔹 Lab 4 – UART / Serial Port Communication (USART)
+##  Lab 4 – UART / Serial Port Communication (USART)
 
 **Focus:** Asynchronous serial communication between AVR and PC.
 
@@ -83,12 +83,9 @@ Across 5 labs, we progressed from basic I/O control to timers, display interface
 
 ---
 
-## 🔹 Lab 5 – ADC Measurements, LCD Display & Timer/UART Interrupts
+##  Lab 5 – ADC Measurements, LCD Display & Timer/UART Interrupts
 
 **Focus:** Analog-to-digital conversion, sensor interfacing, and full interrupt-driven systems.
-
-### 🔸 Lab 5-1 – ADC & Measurement System
-
 **Key topics:**
 
 * Configuring the AVR **ADC**:
@@ -101,14 +98,9 @@ Across 5 labs, we progressed from basic I/O control to timers, display interface
 
   * Displaying results on a **16×2 LCD** for both ADC0 and ADC1. 
 * Interfacing a **MCP9701 temperature sensor**, measuring its output via ADC, computing temperature, and showing it on the LCD. 
-* Understanding ADC errors (offset, gain, DNL, INL, quantization) and formulas for Vin with different VREF values. 
-
-### 🔸 Lab 5-2 – Timer & UART Interrupts
-
-**Key topics:**
-
+* Understanding ADC errors (offset, gain, DNL, INL, quantization) and formulas for Vin with different VREF values.
+  
 * Using **Timer0 interrupts** to:
-
   * Generate a 1 kHz clock on PA0 in both Normal and CTC modes.
   * Maintain continuous waveform generation while the main loop handles other tasks. 
 * Concurrent button + LED control:
@@ -122,10 +114,7 @@ Across 5 labs, we progressed from basic I/O control to timers, display interface
 
     * Receive ‘B’ → turn PA3 LED ON.
     * Receive ‘T’ → turn PA3 LED OFF. 
-
 ---
-
-## Overall Skills Demonstrated
 
 Through Labs 1–5, this course builds a solid foundation in:
 
