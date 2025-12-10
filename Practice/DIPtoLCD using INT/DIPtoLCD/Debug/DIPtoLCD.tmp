@@ -1,0 +1,44 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega324PA"</DEVICE>
+ <WORKING_DIR>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPtoLCD using INT\DIPtoLCD\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>D:/Program\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>D:\Program\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPtoLCD using INT\DIPtoLCD\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>D:/Program\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m324PAdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPtoLCD using INT\DIPtoLCD\Debug\DIPtoLCD.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>DIPtoLCD.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>DIPtoLCD.map</FILE>
+  <FILE>DIPtoLCD.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <main><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPtoLCD using INT\DIPtoLCD\main.asm</FILE><LINE>9</LINE></main>
+  <TIMER0_OVF_ISR><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPtoLCD using INT\DIPtoLCD\main.asm</FILE><LINE>186</LINE></TIMER0_OVF_ISR>
+  <Timer_init><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPtoLCD using INT\DIPtoLCD\main.asm</FILE><LINE>22</LINE></Timer_init>
+  <LCD_Init><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPtoLCD using INT\DIPtoLCD\main.asm</FILE><LINE>90</LINE></LCD_Init>
+  <start><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPtoLCD using INT\DIPtoLCD\main.asm</FILE><LINE>36</LINE></start>
+  <write_cmd_lcd><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPtoLCD using INT\DIPtoLCD\main.asm</FILE><LINE>110</LINE></write_cmd_lcd>
+  <read_dip><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPtoLCD using INT\DIPtoLCD\main.asm</FILE><LINE>48</LINE></read_dip>
+  <check_value><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPtoLCD using INT\DIPtoLCD\main.asm</FILE><LINE>54</LINE></check_value>
+  <display_A><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPtoLCD using INT\DIPtoLCD\main.asm</FILE><LINE>65</LINE></display_A>
+  <display_B><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPtoLCD using INT\DIPtoLCD\main.asm</FILE><LINE>71</LINE></display_B>
+  <display_C><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPtoLCD using INT\DIPtoLCD\main.asm</FILE><LINE>77</LINE></display_C>
+  <display_D><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPtoLCD using INT\DIPtoLCD\main.asm</FILE><LINE>83</LINE></display_D>
+  <write_data_lcd><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPtoLCD using INT\DIPtoLCD\main.asm</FILE><LINE>134</LINE></write_data_lcd>
+  <delay2ms><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPtoLCD using INT\DIPtoLCD\main.asm</FILE><LINE>159</LINE></delay2ms>
+  <LP0><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPtoLCD using INT\DIPtoLCD\main.asm</FILE><LINE>165</LINE></LP0>
+  <LP1><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPtoLCD using INT\DIPtoLCD\main.asm</FILE><LINE>166</LINE></LP1>
+  <LP2><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPtoLCD using INT\DIPtoLCD\main.asm</FILE><LINE>167</LINE></LP2>
+  <LP3><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPtoLCD using INT\DIPtoLCD\main.asm</FILE><LINE>168</LINE></LP3>
+ </LABELS>
+</ASSEMBLER_INFO>

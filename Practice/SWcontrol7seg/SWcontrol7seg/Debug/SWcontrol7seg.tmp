@@ -1,0 +1,42 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega324PA"</DEVICE>
+ <WORKING_DIR>C:\Users\huysk\OneDrive\Máy tính\Practice\SWcontrol7seg\SWcontrol7seg\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>D:/Program\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>D:\Program\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\SWcontrol7seg\SWcontrol7seg\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>D:/Program\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m324PAdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\SWcontrol7seg\SWcontrol7seg\Debug\SWcontrol7seg.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>SWcontrol7seg.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>SWcontrol7seg.map</FILE>
+  <FILE>SWcontrol7seg.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <begin><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\SWcontrol7seg\SWcontrol7seg\main.asm</FILE><LINE>5</LINE></begin>
+  <press_check><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\SWcontrol7seg\SWcontrol7seg\main.asm</FILE><LINE>30</LINE></press_check>
+  <sw0_check><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\SWcontrol7seg\SWcontrol7seg\main.asm</FILE><LINE>42</LINE></sw0_check>
+  <sw1_check><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\SWcontrol7seg\SWcontrol7seg\main.asm</FILE><LINE>51</LINE></sw1_check>
+  <sw2_check><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\SWcontrol7seg\SWcontrol7seg\main.asm</FILE><LINE>60</LINE></sw2_check>
+  <delay500ms><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\SWcontrol7seg\SWcontrol7seg\main.asm</FILE><LINE>101</LINE></delay500ms>
+  <sw0_valid><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\SWcontrol7seg\SWcontrol7seg\main.asm</FILE><LINE>71</LINE></sw0_valid>
+  <sw1_valid><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\SWcontrol7seg\SWcontrol7seg\main.asm</FILE><LINE>81</LINE></sw1_valid>
+  <sw2_valid><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\SWcontrol7seg\SWcontrol7seg\main.asm</FILE><LINE>91</LINE></sw2_valid>
+  <seg_data><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\SWcontrol7seg\SWcontrol7seg\main.asm</FILE><LINE>126</LINE></seg_data>
+  <seg_led><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\SWcontrol7seg\SWcontrol7seg\main.asm</FILE><LINE>144</LINE></seg_led>
+  <LOOP_1><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\SWcontrol7seg\SWcontrol7seg\main.asm</FILE><LINE>107</LINE></LOOP_1>
+  <LOOP_2><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\SWcontrol7seg\SWcontrol7seg\main.asm</FILE><LINE>109</LINE></LOOP_2>
+  <LOOP_3><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\SWcontrol7seg\SWcontrol7seg\main.asm</FILE><LINE>111</LINE></LOOP_3>
+  <table_7seg_data><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\SWcontrol7seg\SWcontrol7seg\main.asm</FILE><LINE>163</LINE></table_7seg_data>
+  <table_7seg_control><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\SWcontrol7seg\SWcontrol7seg\main.asm</FILE><LINE>166</LINE></table_7seg_control>
+ </LABELS>
+</ASSEMBLER_INFO>

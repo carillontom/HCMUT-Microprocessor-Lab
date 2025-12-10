@@ -1,0 +1,49 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega324PA"</DEVICE>
+ <WORKING_DIR>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>D:/Program\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>D:\Program\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>D:/Program\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m324PAdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\Debug\vxlexam.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>vxlexam.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>vxlexam.map</FILE>
+  <FILE>vxlexam.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <main><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\main.asm</FILE><LINE>9</LINE></main>
+  <TIMER1_OVF_ISR><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\main.asm</FILE><LINE>160</LINE></TIMER1_OVF_ISR>
+  <Timer1_Init_1s><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\main.asm</FILE><LINE>26</LINE></Timer1_Init_1s>
+  <start><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\main.asm</FILE><LINE>48</LINE></start>
+  <spltter><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\main.asm</FILE><LINE>78</LINE></spltter>
+  <seg_data><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\main.asm</FILE><LINE>122</LINE></seg_data>
+  <seg_led><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\main.asm</FILE><LINE>140</LINE></seg_led>
+  <delay2ms><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\main.asm</FILE><LINE>178</LINE></delay2ms>
+  <check_unit_sec><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\main.asm</FILE><LINE>79</LINE></check_unit_sec>
+  <inc_dozen_sec><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\main.asm</FILE><LINE>83</LINE></inc_dozen_sec>
+  <check_dozen_sec><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\main.asm</FILE><LINE>87</LINE></check_dozen_sec>
+  <inc_unit_min><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\main.asm</FILE><LINE>91</LINE></inc_unit_min>
+  <check_unit_min><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\main.asm</FILE><LINE>96</LINE></check_unit_min>
+  <inc_dozen_min><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\main.asm</FILE><LINE>100</LINE></inc_dozen_min>
+  <check_dozen_min><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\main.asm</FILE><LINE>106</LINE></check_dozen_min>
+  <done><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\main.asm</FILE><LINE>117</LINE></done>
+  <stop_clock><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\main.asm</FILE><LINE>111</LINE></stop_clock>
+  <table_7seg_data><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\main.asm</FILE><LINE>208</LINE></table_7seg_data>
+  <table_7seg_control><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\main.asm</FILE><LINE>211</LINE></table_7seg_control>
+  <LP0><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\main.asm</FILE><LINE>184</LINE></LP0>
+  <LP1><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\main.asm</FILE><LINE>185</LINE></LP1>
+  <LP2><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\main.asm</FILE><LINE>186</LINE></LP2>
+  <LP3><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\vxlexam\vxlexam\main.asm</FILE><LINE>187</LINE></LP3>
+ </LABELS>
+</ASSEMBLER_INFO>

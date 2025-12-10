@@ -1,0 +1,37 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega324PA"</DEVICE>
+ <WORKING_DIR>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPcontrol7seg\DIPcontrol7seg\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>D:/Program\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>D:\Program\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPcontrol7seg\DIPcontrol7seg\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>D:/Program\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m324PAdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPcontrol7seg\DIPcontrol7seg\Debug\DIPcontrol7seg.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>DIPcontrol7seg.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>DIPcontrol7seg.map</FILE>
+  <FILE>DIPcontrol7seg.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <configure><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPcontrol7seg\DIPcontrol7seg\main.asm</FILE><LINE>7</LINE></configure>
+  <TIMER0_OVF_ISR><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPcontrol7seg\DIPcontrol7seg\main.asm</FILE><LINE>114</LINE></TIMER0_OVF_ISR>
+  <Timer_init><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPcontrol7seg\DIPcontrol7seg\main.asm</FILE><LINE>26</LINE></Timer_init>
+  <main><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPcontrol7seg\DIPcontrol7seg\main.asm</FILE><LINE>39</LINE></main>
+  <case_1><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPcontrol7seg\DIPcontrol7seg\main.asm</FILE><LINE>59</LINE></case_1>
+  <case_2><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPcontrol7seg\DIPcontrol7seg\main.asm</FILE><LINE>66</LINE></case_2>
+  <case_3><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPcontrol7seg\DIPcontrol7seg\main.asm</FILE><LINE>73</LINE></case_3>
+  <seg_data><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPcontrol7seg\DIPcontrol7seg\main.asm</FILE><LINE>81</LINE></seg_data>
+  <seg_led><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPcontrol7seg\DIPcontrol7seg\main.asm</FILE><LINE>97</LINE></seg_led>
+  <table_7seg_data><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPcontrol7seg\DIPcontrol7seg\main.asm</FILE><LINE>129</LINE></table_7seg_data>
+  <table_7seg_control><FILE>C:\Users\huysk\OneDrive\Máy tính\Practice\DIPcontrol7seg\DIPcontrol7seg\main.asm</FILE><LINE>132</LINE></table_7seg_control>
+ </LABELS>
+</ASSEMBLER_INFO>
