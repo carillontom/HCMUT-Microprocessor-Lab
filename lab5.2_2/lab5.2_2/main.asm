@@ -1,0 +1,129 @@
+;
+; lab5.2_1.asm
+;
+; Created: 11/20/2025 3:17:16 PM
+; Author : huysk
+;
+;Ex2
+;Write a program to generate a 1 kHz clock signal on pin PA0 using Timer0 interrupt. Use Timer0 in both Normal mode and CTC mode. Verify the waveform using an oscilloscope.
+;Connect a push button to PA1 and a single LED to PA2. Write a program that both generates a 1 kHz signal on PA0 and continuously checks the button state. 
+;If the button is pressed, turn on the LED; otherwise, turn it off. While controlling the LED, the pulse signal must still be output.
+;Ex3
+;Keep the same connections as in Exercise 1. Connect the TxD and RxD pins of UART0 to UART_TxD0 and UART_RxD0 signals on header J85 in the UART block. Connect an additional LED to PA3.
+;Write a program that performs the same function as Exercise 1(b), and simultaneously waits to receive a character from UART.
+;If the character is ‘B’, turn on the LED connected to PA3; if the character is ‘T’, turn off the LED connected to PA3.
+
+.ORG 0X00
+RJMP configure
+.ORG 0X24
+RJMP TIMER0_OVF_ISR
+.ORG 0x28 
+RJMP USART0_RX_ISR
+.ORG 0X40
+
+configure:
+	SBI DDRA, 0
+	CBI DDRA, 1
+	SBI PORTA, 1
+	SBI DDRA, 2
+	CBI PORTA, 2
+	SBI DDRA, 3
+	CBI PORTA, 3
+
+	LDI R16, high(RAMEND)
+	OUT SPH, R16
+	LDI R16, low(RAMEND)
+	OUT SPL, R16
+
+	RCALL USART_Init
+	RCALL Timer_init
+start: 
+	RCALL Button_check	;PA2
+	RJMP  start
+
+	
+
+;--------------------------------------------------------------------------
+;init UART 0 
+;CPU clock is 8Mhz 
+USART_Init: 
+; Set baud rate to 9600 bps with 1 MHz clock 
+	ldi r16, 103
+	sts UBRR0L, r16 
+;set double speed
+    ldi r16, (1 << U2X0) 
+    sts UCSR0A, r16 
+    ; Set frame format: 8 data bits, no parity, 1 stop bit 
+    ldi r16, (1 << UCSZ01) | (1 << UCSZ00) 
+    sts UCSR0C, r16 
+    ; Enable transmitter and receiver 
+    ldi r16, (1 << RXEN0) | (1 << TXEN0) | (1 << RXCIE0)
+    sts UCSR0B, r16 
+	SEI
+    ret 
+;------------------------------------------------------------------------------------------------------
+
+Timer_init:
+	LDI R16, -63
+	OUT TCNT0, R16	;load -63 to TCNT0, 63 cycle is what we wanted, [(1/1kHz)/2]x[(8x10^6)/64] = 62.5
+	LDI R16, 0X00	;Timer0 - Normal mode
+	OUT TCCR0A, R16
+	LDI R16, 0X03	;Prescaler = 64
+	OUT TCCR0B, R16
+	
+	SEI				;Cho phep ngat toan cuc
+	LDI R17, (1<<TOIE0)	;Cho phep ngat Timer0 overflow
+	STS TIMSK0, R17
+	RET
+
+Button_check:
+	press_check:
+	SBIC PINA, 1
+	rjmp press_check
+	release_check:
+	SBI PORTA, 2
+	SBIS PINA, 1
+	rjmp release_check
+	CBI PORTA, 2
+	RET
+
+TIMER0_OVF_ISR:
+	LDI R17, 0X00
+	OUT TCCR0B, R17		;stop timer
+
+	IN R16, PINA
+	LDI R17, 0b0000_0001
+	EOR R16, R17
+	OUT PORTA, R16		;if PA0 = 1 -> 0, if PA0 = 0 -> 1
+
+	LDI R17, -63
+	OUT TCNT0, R17
+	LDI R17, 0X03
+	OUT TCCR0B, R17
+
+	RETI
+
+USART0_RX_ISR:
+	PUSH R16
+	IN R16, SREG
+	PUSH R16		;push trang thai SREG
+	LDS R16, UDR0	;read received byte
+
+	CPI R16, 'B'
+	BREQ led_on
+	CPI R16, 'T'
+	BREQ led_off
+	RJMP done
+
+	led_on:
+	SBI PORTA, 3
+	RJMP done
+	led_off:
+	CBI PORTA, 3
+	RJMP done
+
+	done:
+	POP R16
+	OUT SREG, R16
+	POP R16
+	RETI

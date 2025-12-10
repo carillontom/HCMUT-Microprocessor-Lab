@@ -1,0 +1,32 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega324PA"</DEVICE>
+ <WORKING_DIR>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab5_Vinh\lab5.2_1\lab5.2_1\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>D:/Program\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>D:\Program\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab5_Vinh\lab5.2_1\lab5.2_1\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>D:/Program\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m324PAdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab5_Vinh\lab5.2_1\lab5.2_1\Debug\lab5.2_1.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>lab5.2_1.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>lab5.2_1.map</FILE>
+  <FILE>lab5.2_1.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <configure><FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab5_Vinh\lab5.2_1\lab5.2_1\main.asm</FILE><LINE>16</LINE></configure>
+  <TIMER0_OVF_ISR><FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab5_Vinh\lab5.2_1\lab5.2_1\main.asm</FILE><LINE>56</LINE></TIMER0_OVF_ISR>
+  <Timer_init><FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab5_Vinh\lab5.2_1\lab5.2_1\main.asm</FILE><LINE>28</LINE></Timer_init>
+  <start><FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab5_Vinh\lab5.2_1\lab5.2_1\main.asm</FILE><LINE>40</LINE></start>
+  <press_check><FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab5_Vinh\lab5.2_1\lab5.2_1\main.asm</FILE><LINE>41</LINE></press_check>
+  <release_check><FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab5_Vinh\lab5.2_1\lab5.2_1\main.asm</FILE><LINE>44</LINE></release_check>
+ </LABELS>
+</ASSEMBLER_INFO>
