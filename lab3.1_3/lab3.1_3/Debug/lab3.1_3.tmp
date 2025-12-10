@@ -1,0 +1,36 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega324PA"</DEVICE>
+ <WORKING_DIR>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab3_Vinh\lab3.1_3\lab3.1_3\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>D:/Program\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>D:\Program\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab3_Vinh\lab3.1_3\lab3.1_3\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>D:/Program\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m324PAdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab3_Vinh\lab3.1_3\lab3.1_3\Debug\lab3.1_3.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>lab3.1_3.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>lab3.1_3.map</FILE>
+  <FILE>lab3.1_3.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <main><FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab3_Vinh\lab3.1_3\lab3.1_3\main.asm</FILE><LINE>20</LINE></main>
+  <loop><FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab3_Vinh\lab3.1_3\lab3.1_3\main.asm</FILE><LINE>36</LINE></loop>
+  <display_7seg><FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab3_Vinh\lab3.1_3\lab3.1_3\main.asm</FILE><LINE>54</LINE></display_7seg>
+  <delay_ms><FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab3_Vinh\lab3.1_3\lab3.1_3\main.asm</FILE><LINE>72</LINE></delay_ms>
+  <sel_sig><FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab3_Vinh\lab3.1_3\lab3.1_3\main.asm</FILE><LINE>64</LINE></sel_sig>
+  <data_led_load><FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab3_Vinh\lab3.1_3\lab3.1_3\main.asm</FILE><LINE>77</LINE></data_led_load>
+  <data_sig><FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab3_Vinh\lab3.1_3\lab3.1_3\main.asm</FILE><LINE>68</LINE></data_sig>
+  <sel_led_load><FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab3_Vinh\lab3.1_3\lab3.1_3\main.asm</FILE><LINE>87</LINE></sel_led_load>
+  <data_led7><FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab3_Vinh\lab3.1_3\lab3.1_3\main.asm</FILE><LINE>97</LINE></data_led7>
+  <select_led7><FILE>C:\Users\huysk\OneDrive\Documents\OneDrive\Vinh\251\VXL\VXL_Lab3_Vinh\lab3.1_3\lab3.1_3\main.asm</FILE><LINE>98</LINE></select_led7>
+ </LABELS>
+</ASSEMBLER_INFO>
